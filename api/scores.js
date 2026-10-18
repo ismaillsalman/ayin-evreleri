@@ -21,7 +21,7 @@ module.exports = async function handler(req, res) {
   // CORS başlıkları
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.setHeader(
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
@@ -103,15 +103,6 @@ module.exports = async function handler(req, res) {
       return res.status(201).json({
         success: true,
         score: newRecord
-      });
-    }
-
-    // 3. DELETE: Tabloyu sıfırla (Öğretmen sınıfı yenilediğinde)
-    if (req.method === 'DELETE') {
-      await db.score.deleteMany({});
-      return res.status(200).json({
-        success: true,
-        message: 'Liderlik tablosu başarıyla sıfırlandı.'
       });
     }
 
