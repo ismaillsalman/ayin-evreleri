@@ -1,0 +1,18 @@
+{
+  "name": "ayin-evreleri-oyunu",
+  "version": "1.0.0",
+  "description": "5. Sınıf Ay'ın Evreleri Etkileşimli Oyunu ve Vercel Prisma Liderlik Tablosu",
+  "main": "index.html",
+  "scripts": {
+    "postinstall": "prisma generate",
+    "build": "prisma generate",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  }
+}
